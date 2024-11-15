@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+<H5>here data of a specific book need to be dispalyed</H5>
+
+<div class="card mb-3 mt-5 mx-auto" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{book.cover.url}}" class="p-4" style="height: 100%;width: 100%;" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">{{book.title}}</h3>
+          <h5>Author:{{book.author}}</h5>
+          <h5>Language:{{book.languages}}</h5>
+          <h5>Price:{{book.price}}</h5>
+          <br>
+          <br>
+          <a href="" class="btn btn-danger">Download</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}   

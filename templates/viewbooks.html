@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h2>View Books</h2>
+    <!-- {{book}}  -->
+    <table class="table table-bordered border border-1 border-primary">
+        <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Pages</th>
+            <th>Language</th> 
+            <th>pdf</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for i in book %} 
+        <!-- # to itrate data from admin-table -->
+        <tr>
+            <td><img src="{{i.cover.url}}" alt="" height="100px" width="100px"></td>
+            <td>{{i.title}}</td>
+            <td>{{i.author}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.pages}}</td> 
+            <td>{{i.languages}}</td>
+            <td><a href="{{i.pdf.url}}">download</a></td>
+            <td><a href="{% url 'Books:viewbookdetails' i.id %}" class="btn btn-danger">View</a></td>
+            <td><a href="{% url 'Books:edit' i.id %}" class="btn btn-danger">Edit</a></td>
+            <td><a href="{% url 'Books:delete' i.id %}" class="btn btn-danger">Delete</a></td>  
+        </tr> 
+        {% endfor %}
+     </table>
+  
+     <!-- <ol>
+        {% for i in book %}
+        <li>Book Details </li>
+
+        <ul> 
+            <li>Title: {{i.title}}</li>
+            <li>Author: {{i.author}}</li>
+            <li>Price: {{i.price}}</li>
+            <li>language:{{i.language}}</li>
+            <li>cover:{{i.cover.url}}</li>
+            <li>pdf:{{i.pdf.url}}</li>
+        </ul>
+        {% endfor %}
+        
+     </ol>
+{% endblock %} --> 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+ {% csrf_token %}
+    <h2>Add books to the cart</h2>
+  <div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label  class="col-form-label">Title </label>
+  </div>
+  <div class="col-auto">
+    <input type="text"  class="form-control "  placeholder="Title" name="t">
+  </div>
+  </div>
+  <br>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label  class="col-form-label">Author</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" name="a"  placeholder="Author">
+    </div>
+    </div>
+    <br>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label  class="col-form-label">Price</label>
+    </div>
+    <div class="col-auto">
+          <input type="number"  class="form-control"  name="pr">
+    </div>
+   </div>
+<br>
+<div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="" class="col-form-label">Pages</label>
+    </div>
+    <div class="col-auto">
+      <input type="number"  class="form-control"  name="pa">
+    </div>
+    </div>
+<br>
+<div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="" class="col-form-label">Language</label>
+    </div>
+    <div class="col-auto">
+      <input type="text"  class="form-control"  name="l">
+    </div>
+    </div>
+<br>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="" class="col-form-label">Cover</label>
+   
+  </div>
+  <div class="col-auto">
+    <input type="file"  class="form-control" name="c">
+  </div>
+  </div>
+<br>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="" class="col-form-label">pdf</label>
+   
+  </div>
+  <div class="col-auto">
+    <input type="file"  class="form-control" name="p">
+  </div>
+  </div>
+
+  
+
+  <button type="submit" class="btn btn-primary">AddBook</button>
+  
+</form>  
+
+{% endblock %}

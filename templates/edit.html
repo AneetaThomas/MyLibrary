@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+ {% csrf_token %}
+    <h2>Edit book details</h2>
+  <div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label  class="col-form-label">Title    </label>
+  </div>
+  <div class="col-auto">
+    <input type="text"  class="form-control" value="{{book.title}}"  placeholder="Title" name="t">
+  </div>
+  </div>
+  <br>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label  class="col-form-label">Author</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" name="a" value="{{book.author}}" placeholder="Author">
+    </div>
+    </div>
+    <br>
+
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label  class="col-form-label">Price</label>
+    </div>
+    <div class="col-auto">
+          <input type="number"  class="form-control" value="{{book.price}}" name="pr">
+    </div>
+   </div>
+<br>
+<div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="" class="col-form-label">Pages</label>
+    </div>
+    <div class="col-auto">
+      <input type="number"  class="form-control" value="{{book.pages}}"  name="pa">
+    </div>
+    </div>
+<br>
+<div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="" class="col-form-label">Language</label>
+    </div>
+    <div class="col-auto">
+      <input type="text"  class="form-control" value="language" name="l">
+    </div>
+    </div>
+<br>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="" class="col-form-label">Cover</label>
+    <img src="{{book.cover.url}}" alt="" height="100px" width="100px">
+    <input type="file"  class="form-control" name="c">
+  </div>
+  </div>
+<br>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="" class="col-form-label">pdf</label>
+    <a href="{{book.pdf.url}}">{{book.pdf}}</a>
+  </div>
+  <div class="col-auto">
+    <input type="file"  class="form-control" name="p">
+  </div>
+  </div>
+
+  
+
+  <button type="submit" class="btn btn-primary">Edit</button>
+  
+</form>  
+
+{% endblock %}
